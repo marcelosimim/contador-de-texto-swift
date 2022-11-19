@@ -1,11 +1,11 @@
 import Foundation
 
-// let vowels: [Character] = ["a", "e", "i", "o", "u"]
-
-let example1 = "teste"
+let example0 = "abacate"
+let example1 = "Abacate"
 let example2 = "inconstitucionalmente"
 let example3 = "Lorem ipsum dolor sit amet"
-let examples = [example1, example2, example3]
+let examples = [example0,
+                example1, example2, example3]
 
 for example in examples {
     print(example)
@@ -22,18 +22,6 @@ func numberOfLetters(_ text: String) -> Int {
     return string.count
 }
 
-//func numberOfVowels(_ text: String) -> Int {
-//    var count = 0
-//    for vowel in vowels {
-//        for letter in text {
-//            if vowel == letter {
-//                count += 1
-//            }
-//        }
-//    }
-//    return count
-//}
-
 func numberOfVowels(_ text: String) -> Int {
     var count = 0
     text.map {
@@ -43,7 +31,8 @@ func numberOfVowels(_ text: String) -> Int {
 }
 
 func isAVowel(_ letter: Character) -> Bool {
-    letter == "a" || letter == "e" || letter == "i" || letter == "o" || letter == "u"
+    let character = letter.lowercased()
+    return character == "a" || character == "e" || character == "i" || character == "o" || character == "u"
 }
 
 func numberOfConsonants(_ text: String) -> Int {
